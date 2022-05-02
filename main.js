@@ -1,7 +1,3 @@
-// add an event listener to load drawing initially
-window.addEventListener('load',draw)
-// document.querySelector('button').addEventListener('click',draw)
-
 // set a global variable for canvas
 const canvas = document.querySelector("canvas");
 
@@ -14,79 +10,78 @@ const resize = () => {
   //call the canvas resize
   resize()
 
-  // whenever the window is resized, the resize function and draw function is called
-//   window.addEventListener('resize', resize)
-//   window.addEventListener('resize', draw)
-
-
-//what to draw
-function draw(){
-if (canvas.getContext){
-	const ctx = canvas.getContext('2d')
-  	ctx.fillStyle ='blueviolet'
-	ctx.font = '50px Arial'
-	ctx.textAlign ='center'
-	ctx.fillText('Do-a-Dot Art Marker Animation Practice',canvas.width / 2, canvas.height / 2)
-  	const size = 30
-	for (let x = 30; x < canvas.width; x+= size){
-		let x = 30
-  		const right = setInterval(() => {
-		// ctx.clearRect(0,0,canvas.width,canvas.height)
-		ctx.beginPath()
-		ctx.arc(x,60,25,0, Math.PI * 2)
-		ctx.fill()
-		x+= size
-	if (x>= canvas.width - 30){
-		clearInterval(right)
+class DrawIt{
+	constructor(dotLength, x,y, dotSize, color){
+		this.dotLength = dotLength
+		this.x = x
+		this.y = y
+		this.dotSize = dotSize
+		this.color = color
 	}
-  }, 200)}
-  let y = 60
-  x = canvas.width - 30
-  	for (let y = 60; y < canvas.height; y+= size){
-		let y = 60
-		const rightDown = setInterval(() => {
-  		// ctx.clearRect(0,0,canvas.width,canvas.height)
-  		ctx.beginPath()
-  		ctx.arc(x,y,25,0, Math.PI * 2)
-  		ctx.fill()
-  		y+= size
-  			if (y>= canvas.height - 18){
-  				clearInterval(rightDown)
-  			}
-  		}
-  		,200)}
-
-	let z = 60
-	for (let z = 60; z < canvas.height; z+= size){
-		let z = 60
-		const leftDown = setInterval(() => {
-		// ctx.clearRect(0,0,canvas.width,canvas.height)
-		ctx.beginPath()
-		ctx.arc(30,z,25,0, Math.PI * 2)
-		ctx.fill()
-		z+= size
-			if (z>= canvas.height - 18){
-				clearInterval(leftDown)
+	setTheCanvas(){
+		if (canvas.getContext){
+			const ctx = canvas.getContext('2d')
+			ctx.fillStyle ='blueviolet'
+			ctx.font = '25px Arial'
+			ctx.textAlign ='center'
+			ctx.fillText('Do-a-Dot Art Marker Animation Practice',canvas.width / 2, canvas.height / 2)
+		}
+		else{
+			console.log('Canvas-Unspported')
+		}
+	}
+	drawX(){
+		if (canvas.getContext){
+			const ctx = canvas.getContext('2d')
+			const size = this.dotLength
+			ctx.fillStyle = this.color
+			for (let x = this.x; x < canvas.width; x+= size){
+				let x = this.x
+				const xAxisDraw = setInterval(() => {
+				ctx.beginPath()
+				ctx.arc(x,this.y,this.dotSize,0, Math.PI * 2)
+				ctx.fill()
+				x+= size
+			if (x>= canvas.width - 30){
+				clearInterval(xAxisDraw)
 			}
+		  	}, 200)}
 		}
-		,200)}
-		
-		ctx.fillStyle ='cornflowerblue'
-		for (let x = 30; x < canvas.width; x+= size){
-			let x = 30
-			  const right = setInterval(() => {
-			// ctx.clearRect(0,0,canvas.width,canvas.height)
-			ctx.beginPath()
-			ctx.arc(x,canvas.height - 30,25,0, Math.PI * 2)
-			ctx.fill()
-			x+= size
-		if (x>= canvas.width - 30){
-			clearInterval(right)
+		else {
+			console.log('Canvas-Unspported')
 		}
-	  }, 200)}
-		
 	}
-else {
-  console.log('Canvas-Unspported')
+	drawY(){
+		if (canvas.getContext){
+			const ctx = canvas.getContext('2d')
+			const size = this.dotLength
+			ctx.fillStyle = this.color
+			for (let y = this.y; y < canvas.height; y+= size){
+				let y = this.y
+				const yAxisDraw = setInterval(() => {
+				ctx.beginPath()
+				ctx.arc(this.x,y,this.dotSize,0, Math.PI * 2)
+				ctx.fill()
+				y+= size
+			if (y>= canvas.height - 30){
+				clearInterval(yAxisDraw)
+			}
+		  	}, 200)}
+		}
+		else {
+			console.log('Canvas-Unspported')
+		}
+	}
 }
-}
+
+//lets create and draw some circles!!
+let draw1 = new DrawIt(40,25,50,15)
+draw1.setTheCanvas()
+draw1.drawX()
+draw1.drawY()
+
+let draw2 = new DrawIt(30, canvas.width - 30, 50, 10,'cornflowerblue')
+draw2.drawY()
+
+let draw3 = new DrawIt(60, 25, canvas.height -30, 20)
+draw3.drawX()
