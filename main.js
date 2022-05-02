@@ -22,9 +22,9 @@ class DrawIt{
 		if (canvas.getContext){
 			const ctx = canvas.getContext('2d')
 			ctx.fillStyle ='blueviolet'
-			ctx.font = '25px Arial'
+			ctx.font = '1.5em Arial'
 			ctx.textAlign ='center'
-			ctx.fillText('Do-a-Dot Art Marker Animation Practice',canvas.width / 2, canvas.height / 2)
+			ctx.fillText('Do-a-Dot Art Marker',canvas.width / 2, canvas.height / 2)
 		}
 		else{
 			console.log('Canvas-Unspported')
