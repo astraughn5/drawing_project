@@ -4,7 +4,7 @@ Welcome to my Do-a-Dot Art Maker. The Do-a-Dot Art maker is programmed to draw d
 </p>
 
 ## Functionality
-To create your own drawing animation paste the below code in the console log of the [Do-a-Dot Art Maker website]. (https://astraughn5.github.io/drawing_project/) 
+To create your own drawing animation paste the below code in the console log of the [Do-a-Dot Art Maker website](https://astraughn5.github.io/drawing_project/). 
 ``` javascript
 let draw4 = new DrawIt(30,25,400,10)
 draw4.drawX()
