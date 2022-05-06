@@ -6,7 +6,7 @@ Welcome to my Do-a-Dot Art Maker. The Do-a-Dot Art maker is programmed to draw d
 ## Functionality
 To create your own drawing animation paste the below code in the console log.
 ``` javascript
-let draw4 = new DrawIt(20,25,400,10)
+let draw4 = new DrawIt(30,25,400,10)
 draw4.drawX()
 draw4.drawY()
 ```
