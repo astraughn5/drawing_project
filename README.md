@@ -8,4 +8,4 @@ To create your own drawing animation paste the below code in the console log.
 let draw4 = new DrawIt(20,25,400,20)
 draw4.drawX()
 
-![alt text](https://github.com/astraughn5/Photo-Generator/blob/main/imgs/photo_generator_thumnail.png)
+![alt text](https://github.com/astraughn5/drawing_project/blob/master/images/do-a-dot%20thumbnail.png)
