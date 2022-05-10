@@ -1,6 +1,7 @@
 # Do-a-Dot Art Maker.
 
-Welcome to my Do-a-Dot Art Maker. The Do-a-Dot Art maker is programmed to draw dots based on the inputted X and Y axis using JavaScript and Canvas in HTML.
+Welcome to my Do-a-Dot Art Maker. The Do-a-Dot Art maker is programmed to draw dots based on the inputted X and Y axis using **JavaScript and Canvas in HTML**.
+
 [Link to Project](https://astraughn5.github.io/drawing_project/)
 
 ## Functionality
