@@ -14,3 +14,10 @@ draw4.drawY()
 where DrawIt(dotLength, x, y, dotSize)
 
 ![alt text](https://github.com/astraughn5/drawing_project/blob/master/images/do-a-dot%20thumbnail.png)
+
+## Optimizations
+
+### Other Project Examples
+1. [Recipe Generator](https://github.com/astraughn5/recipe-generator)
+2. [Photo Generator](https://github.com/astraughn5/Photo-Generator/blob/main/README.md)
+3. [Hank Co](https://github.com/astraughn5/hankco)
